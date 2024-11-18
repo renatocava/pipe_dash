@@ -9,18 +9,35 @@ library(dplyr)
 # df_num <- df |> select(where(is.numeric), -Year)
 
 ui <- page_sidebar(
+  theme = bs_theme(bootswatch = "simplex"),
   sidebar = sidebar(
-    actionButton("total", "Indicadores Total")
+    actionButton("total", "Indicadores Total", class = "btn-primary")
     
   ),
   textOutput("text"),
 )
 
 server <- function(input, output, session) {
+  
+  # bs_themer()
+
   observeEvent(input$total, {
-    source(file = "indicadores_total.R")
+    withProgress( 
+      min = 1,
+      max = 10,
+      # message = 'Calculation in progress', 
+      # detail = 'This may take a while...', 
+      
+      {
+        setProgress(1, message = "Here we go")
+        source(file = "indicadores_total.R")
+        
+        setProgress(10, message = "Finished!")
+      } 
+    ) 
     
-    output$text <- renderText({ "Termino el proceso" })
+    
+    output$text <- renderText({ "Se actualizaron los Indicadores Totales" })
   })
   
 }
