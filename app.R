@@ -1,6 +1,12 @@
 library(shiny)
 library(bslib)
 library(dplyr)
+library(googledrive)
+
+options(
+  gargle_oauth_cache = ".secrets",
+  gargle_oauth_email = "renato.cava@upch.pe"
+)
 
 # penguins_csv <- "https://raw.githubusercontent.com/jcheng5/simplepenguins.R/main/penguins.csv"
 
