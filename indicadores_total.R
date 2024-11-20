@@ -16,7 +16,7 @@ options(gargle_oauth_cache = ".secrets")
 # googledrive::drive_auth()
 
 # non-interactive
-googledrive::drive_auth(cache = ".secrets", email = "renato.cava@upch.pe")
+# googledrive::drive_auth(cache = ".secrets", email = "renato.cava@upch.pe")
 googlesheets4::gs4_auth(token = googledrive::drive_token())
 
 
