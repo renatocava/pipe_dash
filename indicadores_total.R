@@ -1,5 +1,8 @@
 # Columnas acumuladas por region
-
+options(
+  gargle_oauth_cache = ".secrets",
+  gargle_oauth_email = "renato.cava@upch.pe"
+)
 # Load libraries ----------------------------------------------------------
 
 library(tidyverse)
