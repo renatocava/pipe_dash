@@ -10,14 +10,14 @@ data_upch <- REDCapR::redcap_report(redcap_uri = "https://redcap.upch.edu.pe/api
 data_ivi <- REDCapR::redcap_report(redcap_uri = "https://ivirdc.ivi.int/api/", token = Sys.getenv("token_ivi"), report_id = 1098L)$data
 
 # googlesheets4::gs4_auth(cache = ".secrets")
-# googlesheets4::gs4_auth(cache = ".secrets", email = TRUE, use_oob = TRUE)
+googlesheets4::gs4_auth(cache = ".secrets", email = "renato.cava@upch.pe", use_oob = TRUE)
 # # interactive, generates token
-options(gargle_oauth_cache = ".secrets")
+# options(gargle_oauth_cache = ".secrets")
 # googledrive::drive_auth()
 
 # non-interactive
 # googledrive::drive_auth(cache = ".secrets", email = "renato.cava@upch.pe")
-googlesheets4::gs4_auth(token = googledrive::drive_token())
+# googlesheets4::gs4_auth(token = googledrive::drive_token())
 
 
 # Calc indicators TOTAL ---------------------------------------------------------
