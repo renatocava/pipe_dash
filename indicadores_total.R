@@ -1,6 +1,7 @@
 # Load libraries ----------------------------------------------------------
 
 library(tidyverse)
+library(gargle)
 library(googlesheets4)
 
 # Load data ---------------------------------------------------------------
@@ -11,7 +12,7 @@ data_ivi <- REDCapR::redcap_report(redcap_uri = "https://ivirdc.ivi.int/api/", t
 # googlesheets4::gs4_auth(cache = ".secrets")
 # googlesheets4::gs4_auth(cache = ".secrets", email = TRUE, use_oob = TRUE)
 # # interactive, generates token
-options(gargle::gargle_oauth_cache = ".secrets")
+options(gargle_oauth_cache = ".secrets")
 # googledrive::drive_auth()
 
 # non-interactive
