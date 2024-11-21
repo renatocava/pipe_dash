@@ -6,7 +6,7 @@ library(tidyverse)
 
 # Load data ---------------------------------------------------------------
 
-# data_upch <- REDCapR::redcap_report(redcap_uri = "https://redcap.upch.edu.pe/api/", token = Sys.getenv("token_upch"), report_id = 781L)$data
+data_upch <- REDCapR::redcap_report(redcap_uri = "https://redcap.upch.edu.pe/api/", token = Sys.getenv("token_upch"), report_id = 781L)$data
 data_ivi <- REDCapR::redcap_report(redcap_uri = "https://ivirdc.ivi.int/api/", token = Sys.getenv("token_ivi"), report_id = 1098L)$data
 
 # googlesheets4::gs4_auth(cache = ".secrets")
