@@ -4,3 +4,4 @@
 .Ruserdata
 .Renviron
 .secrets
+app_cache/
