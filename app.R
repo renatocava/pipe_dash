@@ -1,8 +1,12 @@
+# Set the application-level cache -----------------------------------------------
+shinyOptions(cache = cachem::cache_mem(max_size = 500e6))
+
+# Load libraries ----------------------------------------------------------
 library(shiny)
 library(bslib)
 library(dplyr)
 
-
+# User Interface Object
 ui <- page_sidebar(
   # App theme ----
   theme = bs_theme(bootswatch = "simplex"),
