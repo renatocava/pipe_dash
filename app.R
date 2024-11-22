@@ -6,22 +6,29 @@ library(shiny)
 library(bslib)
 library(dplyr)
 
+
+
 # User Interface Object
 ui <- page_sidebar(
+  
   # App theme ----
   theme = bs_theme(version = 5, bootswatch = "minty"),
+  
   # App title ----
-  # title = h1("PIPE", align = "center"),
   title = h2("Peruvian Investigation of Pathogenic Enterobacterales"),
+  
   # Sidebar panel for inputs ----
   sidebar = sidebar(
+    
     h4("Cargar"),
     actionButton("cargar_total", "Total", class = "btn-primary", disabled = T),
     actionButton("cargar_lima", "Lima", class = "btn-primary", disabled = T),
     actionButton("cargar_arequipa", "Arequipa", class = "btn-primary", disabled = T),
     actionButton("cargar_loreto", "Loreto", class = "btn-primary", disabled = T),
     actionButton("cargar_ucayali", "Ucayali", class = "btn-primary", disabled = T),
+    
     br(),
+    
     h4("Actualizar"),
     actionButton("actualizar_total", "Total", class = "btn-warning", disabled = T),
     actionButton("actualizar_lima", "Lima", class = "btn-warning", disabled = T),
@@ -30,6 +37,7 @@ ui <- page_sidebar(
     actionButton("actualizar_ucayali", "Ucayali", class = "btn-warning", disabled = T),
     
   ),
+  
   navset_card_underline(
     title = "Indicadores",
     nav_panel("Total", tableOutput("table_total")),
