@@ -21,7 +21,7 @@ ui <- page_sidebar(
   sidebar = sidebar(
     
     h4("Cargar"),
-    actionButton("cargar_total", "Total", class = "btn-primary", disabled = T),
+    actionButton("cargar_total", "Total", class = "btn-primary", disabled = F),
     actionButton("cargar_lima", "Lima", class = "btn-primary", disabled = T),
     actionButton("cargar_arequipa", "Arequipa", class = "btn-primary", disabled = T),
     actionButton("cargar_loreto", "Loreto", class = "btn-primary", disabled = T),
@@ -67,6 +67,8 @@ server <- function(input, output, session) {
     
     output$table_total <- renderTable(indicadores_total)
     
+    updateActionButton(session, "cargar_total", disabled = T)
+    
     updateActionButton(session, "actualizar_total", disabled = F)
     
   })
@@ -90,6 +92,8 @@ server <- function(input, output, session) {
     # output$table_total <- renderTable(indicadores_total)
     
     updateActionButton(session, "actualizar_total", disabled = T)
+    
+    updateActionButton(session, "cargar_total", disabled = F)
     
   })
   
